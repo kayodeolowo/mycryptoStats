@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import {ThemeProvider} from './context/ThemeContext'
-import {Home, Account, Signin, Signup } from './Pages';
+import {Home, Account, Signin, Signup, CoinPage } from './Pages';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -25,8 +25,8 @@ function App() {
             <Route path='/signup' element={<Signup/>} />
              <Route path='/account' element={<Account/>} />
           
-             <Route> 
-                <Route/>
+             <Route path='/coin/:coinId' element={<CoinPage/>}> 
+                <Route path=':coindId'/>
              </Route>
         </Routes>
    </ThemeProvider>

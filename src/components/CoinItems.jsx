@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import {AiOutlineStar} from 'react-icons/ai'
 import { Sparklines, SparklinesLine  } from 'react-sparklines';
 
@@ -10,9 +11,13 @@ const CoinItems = ({coin}) => {
                             <td> {coin.market_cap_rank} </td>
 
                             <td> 
-                               <div className='flex items-center'> 
+                              <Link to={`/coin/${coin.id}`}> 
+                                   <div className='flex items-center'> 
                                 <img  className='w-6 mr-2 rounded-full' src={coin.image} alt={coin.id} />
-                                <p className='hidden sm:table-cell'> {coin.name} </p> </div>
+                                <p className='hidden sm:table-cell'> {coin.name} </p> 
+                                </div>
+                              </Link>
+                              
                             
                              </td> 
                             <td> {coin.symbol.toUpperCase()} </td> 
