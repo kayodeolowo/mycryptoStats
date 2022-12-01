@@ -4,6 +4,7 @@ import {ThemeProvider} from './context/ThemeContext'
 import {Home, Account, Signin, Signup, CoinPage } from './Pages';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { AuthContextProvider } from './context/AuthContext';
 
 function App() {
   const [coins, setCoins] = useState([])
@@ -18,6 +19,7 @@ function App() {
 
   return (
    <ThemeProvider> 
+    <AuthContextProvider> 
         <Navbar/>
         <Routes> 
           <Route path='/' element={<Home coins={coins} />} />
@@ -29,6 +31,7 @@ function App() {
                 <Route path=':coindId'/>
              </Route>
         </Routes>
+      </AuthContextProvider>
    </ThemeProvider>
   );
 }
