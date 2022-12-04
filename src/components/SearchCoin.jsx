@@ -4,12 +4,12 @@ import CoinItems from './CoinItems'
 const SearchCoin = ({coins}) => {
     const [searchCoins, setSearchCoins] = useState('')
   return (
-    <div className='rounded-div my-4'>
-            <div className='flex flex-col justify-between pt-4 pb-6 text-center   '> 
+    <div className='rounded-div my-4 '>
+            <div className='flex flex-col justify-between pt-4 pb-6 text-center  mb-4 md:mb-8 '> 
                 <h1 className='text-2xl font-bold my-2'> Search Coins</h1>
                 <form> 
                     <input onChange={(e)=> setSearchCoins(e.target.value)} type='text' placeholder="Search"
-                    className='w-11/12 bg-primary border-input border-2  py-1  text-center rounded-2xl shadow-xl'> 
+                    className='w-1/2 bg-primary border-input border-[0.5px]  py-1  text-center rounded-2xl shadow-xl'> 
                     </input>
                 </form>    
             </div>  

@@ -64,52 +64,52 @@
 
           <div>
             <p className='text-xl font-bold'>Market Stats </p>
-            <div className='flex justify-between py-4'> 
+            <div className='flex justify-evenly py-4'> 
               <div> 
-                <p className='text-gray-500 text-sm'> Market Rank </p>
-                {coin.market_cap_rank}
+                <p className='text-gray-500 text-sm '> Market Rank </p>
+               <p className='text-center ml-6'> {coin.market_cap_rank} </p> 
               </div>
               <div> 
-                <p className='text-gray-500 text-sm'> Hashing Algorithm </p>
-                {coin.hashing_algorithm? <p>{coin.hashing_algorithm} </p> :null}
+                <p className='text-gray-500 text-sm '> Hashing Algorithm </p>
+                {coin.hashing_algorithm? <p className='text-center'>{coin.hashing_algorithm} </p> :null}
               </div>
               <div> 
-                <p className='text-gray-500 text-sm'> Trust Score </p>
-                {coin.tickers ? <p> {coin.liquidity_score.toFixed(2)}</p> : null}
+                <p className='text-gray-500 text-sm '> Trust Score </p>
+                {coin.tickers ? <p className=' '> {coin.liquidity_score.toFixed(2)}</p> : null}
               </div>
             </div>
 
-           <div className='flex justify-between py-4'> 
+           <div className='flex justify-evenly py-4'> 
                <div> 
               <p className='text-gray-500 text-sm'>Price Change (24hr) </p>
-              {coin.market_data? (<p> {coin.market_data.price_change_percentage_24h.toFixed(2)} </p>):null}  
+              {coin.market_data? (<p className='text-center'> {coin.market_data.price_change_percentage_24h.toFixed(2)} </p>):null}  
              </div>
 
               <div> 
               <p className='text-gray-500 text-sm'>Price Change (7d) </p>
-              {coin.market_data? (<p> {coin.market_data.price_change_percentage_7d.toFixed(2)} </p>):null}  
+              {coin.market_data? (<p className='text-center'> {coin.market_data.price_change_percentage_7d.toFixed(2)} </p>):null}  
              </div>
 
               <div> 
-              <p className='text-gray-500 text-sm'>Price Change (14d) </p>
-              {coin.market_data? (<p> {coin.market_data.price_change_percentage_14d.toFixed(2)} </p>):null}  
+              <p className='text-gray-500 text-sm '>Price Change (14d) </p>
+              {coin.market_data? (<p className='text-center'> {coin.market_data.price_change_percentage_14d.toFixed(2)} </p>):null}  
              </div>
            </div>
 
-           <div className='flex justify-between py-4'> 
+           <div className='flex justify-evenly py-4'> 
                <div> 
               <p className='text-gray-500 text-sm'>Price Change (30d) </p>
-              {coin.market_data? (<p> {coin.market_data.price_change_percentage_30d.toFixed(2)} </p>):null}  
+              {coin.market_data? (<p className='text-center'> {coin.market_data.price_change_percentage_30d.toFixed(2)} </p>):null}  
              </div>
 
               <div> 
               <p className='text-gray-500 text-sm'>Price Change (60d) </p>
-              {coin.market_data? (<p> {coin.market_data.price_change_percentage_60d.toFixed(2)} </p>):null}  
+              {coin.market_data? (<p className='text-center'> {coin.market_data.price_change_percentage_60d.toFixed(2)} </p>):null}  
              </div>
 
               <div> 
               <p className='text-gray-500 text-sm'>Price Change (1y) </p>
-              {coin.market_data? (<p> {coin.market_data.price_change_percentage_1y.toFixed(2)} </p>):null}  
+              {coin.market_data? (<p className='text-center'> {coin.market_data.price_change_percentage_1y.toFixed(2)} </p>):null}  
              </div>
            </div>
           

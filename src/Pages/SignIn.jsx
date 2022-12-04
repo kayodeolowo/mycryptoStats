@@ -6,6 +6,7 @@ import {signIn, UserAuth} from '../context/AuthContext'
 const SignIn = () => {
     const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState('');
+  const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const {signIn} = UserAuth();
@@ -16,18 +17,22 @@ const SignIn = () => {
     setError('');
     try{
         await signIn(email,password)
-        navigate('/account')
+        navigate('/')
+        
     }catch (e) {
+      
       setError(e.message)
-      console.log(e.message)
-    }
+      setError(e.response.data.error)
+    } 
   }
 
 
   return (
     <div>
       <div className='max-w-[400px] mx-auto min-h-[600px] px-4 py-20'>
-          <h1 className='text-2xl font-bold'> Sign In </h1>
+          <h1 className='text-2xl font-bold text-center'> Sign In </h1>
+          
+           {error ? (<p className='text-red-500 text-center mt-2'> Login Failed, Please Check Email or Password  </p> ) : (<p>  </p>)  } 
           <form onSubmit={handleSubmit}> 
             <div className='py-4'> 
               <label> Email </label>

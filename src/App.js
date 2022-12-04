@@ -5,6 +5,7 @@ import {Home, Account, Signin, Signup, CoinPage } from './Pages';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { AuthContextProvider } from './context/AuthContext';
+import Footer from './Pages/Footer';
 
 function App() {
   const [coins, setCoins] = useState([])
@@ -30,7 +31,9 @@ function App() {
              <Route path='/coin/:coinId' element={<CoinPage/>}> 
                 <Route path=':coindId'/>
              </Route>
+             
         </Routes>
+        
       </AuthContextProvider>
    </ThemeProvider>
   );

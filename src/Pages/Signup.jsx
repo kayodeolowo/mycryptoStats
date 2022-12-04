@@ -16,20 +16,22 @@ const Signup = () => {
     setError('')
     try{
         await signUp(email,password)
-        navigate('/')
+        navigate('/account')
     }catch (e) {
-      setError(e.message)
-      console.log(e.message)
+      alert(e.message)
+     
+      
     }
   }
+
 
 
   return (
     <div>
         <div>
       <div className='max-w-[400px] mx-auto min-h-[600px] px-4 py-20'>
-          <h1 className='text-2xl font-bold'> Sign Up </h1>
-          {error? <p className='bg-red-300 my-2'>{error} </p> : null }
+          <h1 className='text-2xl font-bold text-center'> Sign Up </h1>
+          {error? <p className='bg-red-300 my-2'>{setError} </p> : null }
           <form onSubmit={handleSubmit}> 
             <div className='py-4'> 
               <label> Email </label>

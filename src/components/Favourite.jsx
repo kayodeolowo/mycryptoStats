@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
- import {AiOutlineClose} from 'react-icons/ai'
+ import {AiFillDelete} from 'react-icons/ai'
  import {doc, onSnapshot, updateDoc} from 'firebase/firestore'
  import {db} from '../firebase'
  import { UserAuth } from '../context/AuthContext'
-import { async } from '@firebase/util'
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Favourite = () => {
     const [coins, setCoins] = useState([])
@@ -18,6 +19,7 @@ const Favourite = () => {
 
     const coinPath = doc(db,'users', `${user?.email}`)
     const deleteCoin = async (passedid) => {
+      toast("Coin Removed")
         try{
           const result = coins.filter((item)=> item.id !== passedid)
           await updateDoc(coinPath,{
@@ -31,7 +33,7 @@ const Favourite = () => {
   return (
     <div>
         {coins?.length ===0 ? (<p> 
-          <p> you done have click to add <Link to='/'> Click here to search </Link> </p>
+          <p> You are yet to favourite any coin, please  <Link to='/' className='text-green-400'> Click here to add </Link> </p>
         </p>) : (
           <table className='w-full border-collapse text-center'> 
             <thead> 
@@ -57,7 +59,8 @@ const Favourite = () => {
                         </div>
                       </Link> 
                     </td>
-                    <td> <AiOutlineClose onClick={()=> deleteCoin(coin.id)} className='cursor-pointer'/> </td>
+                    <td> <AiFillDelete onClick={()=> deleteCoin(coin.id)} className='cursor-pointer text-red-600 ml-4'/>
+                    <ToastContainer /> </td>
                 </tr>
               ))}
             </tbody>
