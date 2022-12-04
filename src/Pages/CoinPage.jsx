@@ -113,12 +113,7 @@
              </div>
            </div>
           
-            <div className='flex justify-around p-8 text-accent'> 
-            <FaTwitter/>
-            <FaFacebook/>
-            <FaReddit/>
-            <FaGithub/>
-           </div>
+           
           </div>
 
 

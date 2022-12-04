@@ -22,7 +22,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='rounded-div flex items-center justify-between h-20 font-bold'>
+    <div className='rounded-div flex items-center justify-between h-20 font-bold '>
         <Link to='/'>
             <h1 className='text-2xl'> Cryptomaniac </h1> 
         </Link>
@@ -32,7 +32,7 @@ const Navbar = () => {
         </div>
         
         {user?.email ? (
-            <div>
+            <div className='hidden md:block'>
                 <Link to='/account' className='p-4'>Account </Link>
                 <button onClick={handleSignOut}> Sign out</button>
                  </div>
@@ -59,13 +59,16 @@ const Navbar = () => {
             </ul>
 
             <div  className='flex flex-col w-full p-4'> 
-                <Link to='/signin' >
-                    <button onClick={handleNav} className='w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl'> Sign In </button>
-                </Link>
-
-              <Link to='/signup' >
-                    <button onClick={handleNav} className='w-full my-2 p-3 bg-button text-btn rounded-2xl shadow-xl'> Sign Up</button> 
-            </Link>
+                {user?.email ? (
+            <div>
+                <Link to='/account' className='p-4'>Account </Link>
+                <button onClick={handleSignOut}> Sign out</button>
+                 </div>
+        ) : (
+        <div className='md:hidden '> 
+            <Link to='/signin'  className='p-4 hover:text-accent'>Sign In</Link>
+            <Link to='/signup' className='bg-button text-btnText px-5 py-2 rounded-2xl shadow-lg hover:shadow-2xl' >Sign Up</Link>
+        </div>)}
             </div>
         </div>
         

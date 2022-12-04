@@ -33,6 +33,7 @@ const CoinItems = ({coin}) => {
   return (
                
         <tr className='h-[80px] border-b overflow-hidden'>
+            
                             <td onClick={saveCoin}> 
                               {savedCoin ? <AiFillStar/> : <AiOutlineStar/>}
                                </td> 
@@ -48,6 +49,7 @@ const CoinItems = ({coin}) => {
                               
                             
                              </td> 
+                            
                             <td> {coin.symbol.toUpperCase()} </td> 
                             <td> {coin.current_price.toLocaleString()} </td> 
                             <td> {coin.price_change_percentage_24h >0 ? (<p className='text-green-700'>{coin.price_change_percentage_24h.toFixed(2)}% </p>) : ( <p className='text-red-500'> {coin.price_change_percentage_24h.toFixed(2)}% </p>) } </td> 
