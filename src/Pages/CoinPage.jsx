@@ -52,12 +52,12 @@
       <div className='flex justify-between py-4'>
         <div> 
           <p className='text-gray-500 text-sm'> 24h High</p>
-           {coin.market_data?.high_24h ? (<p> {coin.market_data.high_24h.usd.toLocaleString()} </p>) : null}
+           {coin.market_data?.high_24h ? (<p className='text-green-700 font-semibold'>  {coin.market_data.high_24h.usd.toLocaleString()} </p>) : null}
         </div>
 
         <div> 
-          <p className='text-gray-500 text-sm'> 24h Low</p>
-           {coin.market_data?.low_24h ? (<p> {coin.market_data.low_24h.usd.toLocaleString()} </p>) : null}
+          <p className='text-gray-500 text-sm mt-1'> 24h Low</p>
+           {coin.market_data?.low_24h ? (<p className='text-red-600 font-semibold'> {coin.market_data.low_24h.usd.toLocaleString()} </p>) : null}
         </div>
       </div>
      </div>
