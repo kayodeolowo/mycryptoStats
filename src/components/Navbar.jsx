@@ -57,7 +57,7 @@ const Navbar = () => {
     }> 
             <ul onClick={handleNav}  className='w-full p-4 mt-[20%] '> 
              <li className='  w-fit mx-auto '>  <ThemeToggle/> </li> 
-                <li className=' py-4 w-fit mx-auto'> <Link to='/'> Home </Link> </li>
+                <li className=' py-4 mt-2 w-fit mx-auto'> <Link to='/'> Home </Link> </li>
                  {/* <li className='border-b py-6'> <Link to='/account'> Account </Link> </li> */}
                 
             </ul>
@@ -71,7 +71,7 @@ const Navbar = () => {
         ) : (
         <div  onClick={handleNav}  className='md:hidden flex flex-col  '> 
             <Link to='/signin'  className='p-4 hover:text-accent w-fit mx-auto'>Sign In</Link>
-            <Link to='/signup' className='bg-button text-btnText px-5 mt-4 py-2 w-fit mx-auto rounded-2xl shadow-lg hover:shadow-2xl' >Sign Up</Link>
+            <Link to='/signup' className='bg-button text-btnText px-10 items-center mt-4 py-[1px] w-fit mx-auto rounded-xl shadow-lg hover:shadow-2xl' >Sign Up</Link>
         </div>)}
             </div>
         </div>
