@@ -5,7 +5,7 @@ import { Sparklines, SparklinesLine  } from 'react-sparklines';
 import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
-import Footer from '../Pages/Footer';
+
 
 
 const CoinItems = ({coin}) => {

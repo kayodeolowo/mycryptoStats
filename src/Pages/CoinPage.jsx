@@ -7,22 +7,41 @@
  
  const CoinPage = () => {
   const [coin, setCoin] = useState({});
+  const [loading, setLoading] = useState(false)
   const params = useParams()
   const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}?localization=false%20&sparkline=true`
 
-  useEffect(()=>{
-    axios.get(url).then((response)=>{
-      setCoin(response.data)
-      console.log(response.data)
-    })
-  },[url])
+  // useEffect(()=>{
+  //   axios.get(url).then((response)=>{
+  //     setCoin(response.data)
+  //     console.log(response.data)
+  //   })
+  // },[url])
+
+  const showCoins = async() => {
+    try {
+      const data = await axios 
+      .get(url)
+      .then(res=> {
+        setCoin(res.data)
+        console.log(res.data)
+      });
+      setLoading(true);
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
+  useEffect(()=> {
+    showCoins();
+  }, []);
 
    return (
      <div className='rounded-div my-12 py-8'>
       <div className='flex py-8 '> 
         <img className='w-20 mr-8' src={coin.image?.large} alt=""/>
         <div> 
-          <p className='text-3xl font-bold'> {coin?.name} price </p>
+          <p className='text-3xl  font-bold'> {coin?.name} price </p>
            <p> ({coin.symbol?.toUpperCase()} / USD) </p>
         </div>
       </div>

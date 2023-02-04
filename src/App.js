@@ -5,6 +5,7 @@ import {Home, Account, Signin, Signup, CoinPage } from './Pages';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { AuthContextProvider } from './context/AuthContext';
+import FadeLoader from 'react-spinners/FadeLoader'
 
 import {TbPlayerTrackNext, TbPlayerTrackPrev} from 'react-icons/tb'
 
@@ -13,7 +14,7 @@ function App() {
    const [loading, setLoading] = useState (false)
    const [currentpage, setCurrentpage] = useState(1)
 
-  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${currentpage}&sparkline=true`
+  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=${currentpage}&sparkline=true`
 
   useEffect (()=> {
     axios.get(url).then((response)=> {
@@ -27,7 +28,7 @@ function App() {
    <ThemeProvider> 
     <AuthContextProvider> 
         <Navbar/>
-        <Routes> 
+       { loading ?  <Routes> 
           <Route path='/' element={<Home coins={coins} />} />
            <Route path='/signin' element={<Signin/>} />
             <Route path='/signup' element={<Signup/>} />
@@ -39,8 +40,12 @@ function App() {
 
             
              
-        </Routes>
-        <div className='flex  justify-center mt-4 space-x-4 pb-10'> 
+        </Routes> :  <div className="flex flex-col w-fit mx-auto mt-[40%] md:mt-[15%]"  >
+          
+          <FadeLoader speedMultiplier="1" size={15} color='yellow' className='' />
+          <p className='italic font-semibold'> loading... </p>
+          </div> }
+        {/* <div className='flex  justify-center mt-4 space-x-4 pb-10'> 
 
          <button  onClick={ ()=> {
               if (currentpage ===1) {
@@ -60,7 +65,7 @@ function App() {
         
              
         </div>   
-        
+         */}
       </AuthContextProvider>
    </ThemeProvider>
   );
