@@ -4,6 +4,7 @@
  import {FaTwitter, FaFacebook, FaReddit, FaGithub} from 'react-icons/fa'
  import DOMPurify from 'dompurify';
  import { useParams } from 'react-router-dom';
+ import ClipLoader from 'react-spinners/ClipLoader'
  
  const CoinPage = () => {
   const [coin, setCoin] = useState({});
@@ -37,7 +38,8 @@
   }, []);
 
    return (
-     <div className='rounded-div my-12 py-8'>
+    <>
+      {loading ?  <div className='rounded-div my-12 py-8'>
       <div className='flex py-8 '> 
         <img className='w-20 mr-8' src={coin.image?.large} alt=""/>
         <div> 
@@ -143,7 +145,12 @@
           <p className='text-xl font-bold'> About {coin.name}</p>
           <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize( coin.description ? coin.description.en:''),}}></p>
         </div>
-    </div> 
+    </div>: <div className="flex flex-col w-fit mx-auto mt-[40%] md:mt-[15%]"  >
+          
+          <ClipLoader speedMultiplier="1"  color='yellow' className='' />
+          
+          </div>}
+    </> 
    )
  }
  

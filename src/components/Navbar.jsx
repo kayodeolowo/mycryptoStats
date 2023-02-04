@@ -53,11 +53,11 @@ const Navbar = () => {
 
 
 
-        <div className={nav ?  'leading-loose text-center    text-xl  absolute  left-0  top-0   w-full  mx-auto z-10    flex h-full   mt-20  bg-primary ease-in-out duration-300  flex-col' : 'absolute left-[-100%]   '
+        <div className={nav ?  'leading-loose text-center    text-xl  absolute  left-0  top-0   w-full  mx-auto z-10    flex h-full   mt-20  bg-primary ease-in-out   flex-col' : 'absolute left-[-100%]   '
     }> 
             <ul onClick={handleNav}  className='w-full p-4 mt-[20%] '> 
              <li className='  w-fit mx-auto '>  <ThemeToggle/> </li> 
-                <li className=' py-4 mt-2 w-fit mx-auto'> <Link to='/'> Home </Link> </li>
+                <li className='   w-fit mx-auto'> <Link to='/'> Home </Link> </li>
                  {/* <li className='border-b py-6'> <Link to='/account'> Account </Link> </li> */}
                 
             </ul>
