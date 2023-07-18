@@ -40,10 +40,10 @@ function App() {
 
             
              
-        </Routes> :  <div className="flex flex-col w-fit mx-auto mt-[40%] md:mt-[15%]"  >
+        </Routes> :  <div className="flex flex-col w-fit mx-auto mt-[45%] md:mt-[15%] h-10"  >
           
-          <FadeLoader speedMultiplier="1" size={15} color='yellow' className='' />
-          <p className='italic font-semibold'> loading... </p>
+          <FadeLoader speedMultiplier="1"  color='green'  className='' />
+         
           </div> }
         {/* <div className='flex  justify-center mt-4 space-x-4 pb-10'> 
 

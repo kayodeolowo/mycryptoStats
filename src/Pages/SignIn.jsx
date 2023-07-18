@@ -2,7 +2,8 @@ import React , {useState} from 'react'
 import {AiOutlineMail, AiFillLock} from 'react-icons/ai'
 import { Link , useNavigate } from 'react-router-dom'
 import {signIn, UserAuth} from '../context/AuthContext'
-import toast, { Toaster } from 'react-hot-toast';
+import {toast} from 'react-toastify'
+
 
 
 const SignIn = () => {
@@ -22,7 +23,7 @@ const SignIn = () => {
     try{
         await signIn(email,password)
         navigate('/')
-       
+        toast.success('Login Successful')
         
     }catch (e) {
       
@@ -64,6 +65,7 @@ const SignIn = () => {
           </form>
           <p> Don't have an account? <Link to='/signup' className='text-red-700 font-bold'> Sign Up </Link>  </p>
         </div> 
+       
     </div>
   )
 }
