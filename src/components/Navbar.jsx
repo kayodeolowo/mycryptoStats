@@ -30,8 +30,8 @@ const Navbar = () => {
         </Link>
 
         <a href='https://kayodeolowo.netlify.app/' target='blank'>
-        <div className='bg-yellow-700 h-7 w-7 mt-1 hover:cursor-pointer hover:bg-green-500  rounded-full flex items-center justify-center text-center'>
-            <p className='text-xs text-inherit font-semibold'> KA </p>
+        <div className=' mt-1 hover:cursor-pointer   rounded-full flex items-center justify-center text-center'>
+           <img src='./images/profile.png'  className='h-6 w-6'/>
         </div>
         </a>
 
