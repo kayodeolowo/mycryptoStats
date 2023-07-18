@@ -2,6 +2,7 @@ import React from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import Favourite from '../components/Favourite'
 import { UserAuth } from '../context/AuthContext'
+import Footer from './Footer'
 
 const Account = () => {
   const {user, logout} = UserAuth()
@@ -37,6 +38,7 @@ const Account = () => {
         <Favourite/>
       </div>
      </div> */}
+    
     </div>
   ) 
   }else {

@@ -4,6 +4,7 @@ import ThemeToggle from './ThemeToggle'
 import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 import { UserAuth } from '../context/AuthContext'
 import {FaBitcoin} from 'react-icons/fa'
+import {FcManager } from 'react-icons/fc'
 
 const Navbar = () => {
     const {user, logout} = UserAuth( )
@@ -28,6 +29,12 @@ const Navbar = () => {
             <h1 className='text-2xl flex items-center'> CryptoStats <span className='ml-2 text-yellow-500'> <FaBitcoin/> </span> </h1> 
         </Link>
 
+        <a href='https://kayodeolowo.netlify.app/' target='blank'>
+        <div className='bg-yellow-700 h-7 w-7 mt-1 hover:cursor-pointer hover:bg-green-500  rounded-full flex items-center justify-center text-center'>
+            <p className='text-xs text-inherit font-semibold'> KA </p>
+        </div>
+        </a>
+
         <div className='hidden md:block'> 
             <ThemeToggle/>
         </div>
@@ -36,6 +43,7 @@ const Navbar = () => {
             <div className='hidden md:block'>
                 <Link to='/account' className='p-4'> Account </Link>
                 <button onClick={handleSignOut}> Sign out</button>
+                
                  </div>
         ) : (
         <div className='hidden md:block'> 

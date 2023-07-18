@@ -3,6 +3,7 @@ import {AiOutlineMail, AiFillLock} from 'react-icons/ai'
 import { Link , useNavigate } from 'react-router-dom'
 import {signIn, UserAuth} from '../context/AuthContext'
 import {toast} from 'react-toastify'
+import Footer from './Footer'
 
 
 
@@ -65,7 +66,7 @@ const SignIn = () => {
           </form>
           <p> Don't have an account? <Link to='/signup' className='text-red-700 font-bold'> Sign Up </Link>  </p>
         </div> 
-       
+        <Footer/>
     </div>
   )
 }
